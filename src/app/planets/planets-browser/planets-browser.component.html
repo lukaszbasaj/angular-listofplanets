@@ -1,14 +1,15 @@
-<div class="header">
-  <mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Choose wisely">
-  </mat-form-field>
-</div>
-
-<div class="container mat-elevation-z4">
-
+<div class="container">
+  <div class="header">
+    <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Find your planet">
+    </mat-form-field>
+  </div>
 
 
-  <mat-table [dataSource]="dataSource" matSort>
+
+
+
+  <mat-table class="ng-scope layout-row" [dataSource]="dataSource" matSort>
     <ng-container matColumnDef="name">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
       <mat-cell *matCellDef="let row"> {{row.name}} </mat-cell>

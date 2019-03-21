@@ -14,6 +14,9 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 import { ToastrModule } from 'ngx-toastr';
 import { ErrorHandlingInterceptor } from './core/error-handling.interceptor';
 import { MessageService } from './services/message.service';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
 	declarations: [
@@ -33,6 +36,9 @@ import { MessageService } from './services/message.service';
 		MatInputModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
+		MatCardModule,
+		MatProgressBarModule,
+		MatListModule,
 		ToastrModule.forRoot()
 	],
 	providers: [
