@@ -1,0 +1,17 @@
+<h1>Details</h1>
+
+<ul *ngIf="planet;else loading">
+  <a mat-raised-button color="primary" routerLink='/'>Back</a>
+  <li>
+    <p>Planet: {{planet.name}}</p>
+    <p>Diameter: {{ planet.diameter }}</p>
+    <p>Gravity: {{planet.gravity}}</p>
+  </li>
+
+
+
+</ul>
+
+<ng-template #loading>
+  <h2>Loading...</h2>
+</ng-template>
