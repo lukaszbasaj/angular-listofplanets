@@ -39,7 +39,7 @@ export class DataService {
 	}
 
 	// get planets from all pages API
-	getAllPlanets(): Observable<any[]> {
+	getAllPlanets(): Observable<PlanetResponse[]> {
 		let response1 = this.getPlanets();
 		let response2 = this.getPlanets(2);
 		let response3 = this.getPlanets(3);
