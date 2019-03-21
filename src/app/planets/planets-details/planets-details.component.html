@@ -1,30 +1,26 @@
-<div class="container">
+<div class="container" *ngIf="planet;else loading">
 <a mat-raised-button color="primary" routerLink='/'>Back</a>
 <mat-card class="example-card">
+
   <mat-card-header>
-    <mat-card-title>Planet: {{planet.name}}</mat-card-title>
-    <mat-card-subtitle>Diameter: {{ planet.diameter }} | Climate: {{ planet.climate }} | Gravity: {{ planet.gravity }}
-    </mat-card-subtitle>
+    <h1> Planet: {{ planet.name }}  </h1>
   </mat-card-header>
   <mat-card-content>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus unde amet vero magnam dolores natus
-      recusandae quisquam numquam inventore doloribus facere, asperiores veritatis impedit blanditiis in, eveniet
-      mollitia sunt at, odit ipsa eligendi ducimus ipsum? Quaerat aliquam quam numquam dolore blanditiis, magni alias
-      fugit distinctio ut delectus vitae doloribus. Facere nulla voluptatum, natus nesciunt earum quasi molestiae quos
-      delectus tempora ut libero quidem commodi! Pariatur alias iusto repellat quibusdam voluptas nesciunt aperiam
-      voluptate perferendis? Minus perferendis dolore libero assumenda! Cupiditate alias iusto, exercitationem
-      consectetur dolor nisi natus saepe illo, voluptatem magnam reprehenderit pariatur officiis nihil ad totam
-      delectus repellendus. Impedit deleniti dolorem dolore delectus iusto eos expedita, ad reiciendis quas ut
-      obcaecati nesciunt illum facere libero cumque vitae rem aut officia recusandae corporis eveniet nihil. Fuga
-      dicta architecto consequuntur, laboriosam eius tempore ut temporibus libero dolorum tenetur eum. Maiores, nulla
-      impedit culpa quo tempora, vero expedita magnam ullam a laudantium pariatur, corrupti velit veritatis
-      consequatur! Deserunt, ducimus possimus totam aspernatur incidunt quis recusandae explicabo? Maxime impedit
-      veritatis, blanditiis dolorum incidunt eaque ipsum ea debitis reprehenderit? Labore ipsa iste doloremque aliquid
-      atque vel corporis? Illo dolores aliquid exercitationem atque, soluta quisquam eos quas nesciunt, obcaecati,
-      esse corporis. Nihil cumque accusamus sit.
-    </p>
+    <mat-list>
+      <mat-list-item> Diameter: {{ planet.diameter }} </mat-list-item>
+      <mat-list-item> Gravity: {{ planet.gravity }}  </mat-list-item>
+      <mat-list-item> Climate: {{ planet.climate }} </mat-list-item>
+      <mat-list-item> Terrain: {{ planet.terrain }} </mat-list-item>
+      <mat-list-item> Population: {{ planet.population }}  </mat-list-item>
+      
+</mat-list>
   </mat-card-content>
 </mat-card>
+
+
+
+ <ng-template #loading>
+  <h2>Loading...</h2>
+</ng-template>
 
 </div>
