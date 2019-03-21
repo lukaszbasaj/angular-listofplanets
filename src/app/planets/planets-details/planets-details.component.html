@@ -1,24 +1,25 @@
 <div class="container" *ngIf="planet;else loading">
-<a mat-raised-button color="primary" routerLink='/'>Back</a>
-<mat-card class="example-card">
+  <a mat-raised-button color="primary" routerLink='/'>Back</a>
+  <mat-card class="example-card">
 
-  <mat-card-header>
-    <h1> Planet: {{ planet.name }}  </h1>
-  </mat-card-header>
-  <mat-card-content>
-    <mat-list>
-      <mat-list-item> Diameter: {{ planet.diameter }} </mat-list-item>
-      <mat-list-item> Gravity: {{ planet.gravity }}  </mat-list-item>
-      <mat-list-item> Climate: {{ planet.climate }} </mat-list-item>
-      <mat-list-item> Terrain: {{ planet.terrain }} </mat-list-item>
-      <mat-list-item> Population: {{ planet.population }}  </mat-list-item>
-      
-</mat-list>
-  </mat-card-content>
-</mat-card>
+    <mat-card-header>
+      <h1> Planet: {{ planet.name }} </h1>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item> Diameter: {{ planet.diameter }} </mat-list-item>
+        <mat-list-item> Gravity: {{ planet.gravity }} </mat-list-item>
+        <mat-list-item> Climate: {{ planet.climate }} </mat-list-item>
+        <mat-list-item> Terrain: {{ planet.terrain }} </mat-list-item>
+        <mat-list-item> Population: {{ planet.population }} </mat-list-item>
 
- <ng-template #loading>
-  <h2>Loading...</h2>
-</ng-template>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
 
 </div>
+<ng-template #loading>
+  <div class="loader">
+    <h2>Loading...</h2>
+  </div>
+</ng-template>
