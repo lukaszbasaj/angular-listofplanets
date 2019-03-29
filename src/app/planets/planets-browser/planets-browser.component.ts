@@ -16,12 +16,12 @@ export class PlanetsBrowserComponent {
 	@ViewChild(MatPaginator) paginator: MatPaginator;
 	@ViewChild(MatSort) sort: MatSort;
 
-	constructor(private data: DataService, private route: ActivatedRoute) {}
+	constructor(private dataServices: DataService, private route: ActivatedRoute) {}
 
 	ngOnInit() {
 		// subscribe to planets data and load it to Material data table
-		this.data.currentData.subscribe((data) => {
-			this.dataSource.data = data;
+		this.dataServices.currentData.subscribe((allPlanetsData) => {
+			this.dataSource.data = allPlanetsData;
 			this.dataSource.filterPredicate = (data: Planet, filter: string) =>
 				data.name.trim().toLowerCase().indexOf(filter) != -1;
 		});

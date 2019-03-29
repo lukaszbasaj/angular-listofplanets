@@ -12,15 +12,15 @@ const httpOptions = {
 
 @Injectable()
 export class DataService {
-	private readonly baseUrl = 'https://swapi.co/api/';
+	private readonly baseUrl = 'https://swapi.co/api/planets/';
 
 	// declare planets data observable
-	private dataSource = new BehaviorSubject([]);
-	currentData = this.dataSource.asObservable();
+	private allPlanetsData = new BehaviorSubject([]);
+	currentData = this.allPlanetsData.asObservable();
 
 	// update planets data observable
-	changeData(data: any[]) {
-		this.dataSource.next(data);
+	updateAllPlanetsData(data: any[]) {
+		this.allPlanetsData.next(data);
 	}
 
 	constructor(private http: HttpClient) {}
@@ -30,7 +30,7 @@ export class DataService {
 		const options = {
 			params: {}
 		};
-		const link = `${this.baseUrl}planets/`;
+		const link = `${this.baseUrl}`;
 		if (page) {
 			options.params = { page };
 		}
@@ -53,6 +53,6 @@ export class DataService {
 
 	// get single planet
 	getPlanet(id) {
-		return this.http.get(`https://swapi.co/api/planets/${id}`);
+		return this.http.get(`${this.baseUrl}${id}`);
 	}
 }

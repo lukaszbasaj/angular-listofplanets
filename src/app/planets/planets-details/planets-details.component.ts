@@ -11,15 +11,15 @@ export class PlanetsDetailsComponent {
 	id: string;
 	planet: Object;
 
-	constructor(private route: ActivatedRoute, private data: DataService) {}
+	constructor(private route: ActivatedRoute, private dataServices: DataService) {}
 
 	ngOnInit() {
 		// get id from URL
 		this.id = this.route.snapshot.paramMap.get('id');
 
 		// fetch single planet data
-		this.data.getPlanet(this.id).subscribe((data) => {
-			this.planet = data;
+		this.dataServices.getPlanet(this.id).subscribe((responseData) => {
+			this.planet = responseData;
 		});
 	}
 }
