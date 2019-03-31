@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 This is an application based on Angular 5, Angular Material + rxjs to use and handle requests to https://swapi.co/api/planets. By using this application you are able to list all planets and see details of each of them.
-You can check functionality here: https://lukaszbasaj.github.io/listofplanets
+You can check functionality here: https://lukaszbasaj.github.io/angular-listofplanets/
 
 In case of connection issues, the application is able to display an appropriate error message.
 
